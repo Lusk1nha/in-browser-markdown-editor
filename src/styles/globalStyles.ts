@@ -7,6 +7,12 @@ const GlobalStyle = createGlobalStyle`
     outline: 0;
     box-sizing: border-box;
   }
+
+  #root {
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+  }
 `;
 
 export default GlobalStyle;
