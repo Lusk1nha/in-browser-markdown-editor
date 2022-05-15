@@ -20,6 +20,7 @@ export const lightTheme = {
     weight: {
       light: '300',
       regular: '400',
+      medium: '500',
       bold: '700'
     }
   }
@@ -47,6 +48,7 @@ export const darkTheme = {
     weight: {
       light: '300',
       regular: '400',
+      medium: '500',
       bold: '700'
     }
   }

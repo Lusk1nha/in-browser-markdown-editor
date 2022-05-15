@@ -11,7 +11,23 @@ interface ThemeChangerProps {
 
 export function ThemeChanger(props: ThemeChangerProps) {
   const handleSlider = () => {
+    updateLocalTheme(!props.onWhiteMode);
     props.setOnWhiteMode(!props.onWhiteMode);
+  }
+
+  const getLocalTheme = (): string | undefined => {
+    const cacheTheme = localStorage.getItem('theme');
+
+    if(cacheTheme !== null) return cacheTheme
+    return undefined
+  }
+
+  const updateLocalTheme = (value: string | boolean) => {
+    const cache = localStorage.getItem('theme');
+
+    if(cache == undefined || cache != value) {
+      return localStorage.setItem('theme', value as string);
+    }
   }
 
   return(
