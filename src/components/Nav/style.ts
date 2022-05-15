@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Icon } from "../../styles/Icon";
+import  SVGComponent from "../../styles/SVGComponent";
 
 export const Header = styled.header`
   background: ${(props) => props.theme.colors.header};
@@ -36,7 +36,7 @@ export const ButtonNavbar = styled.button.attrs(props => ({
   }
 `;
 
-export const StyledMenuIcon = styled(Icon).attrs(props => ({
+export const StyledMenuIcon = styled(SVGComponent).attrs(props => ({
   viewBox: '0 0 24 24'
 }))`
   width: 35px;

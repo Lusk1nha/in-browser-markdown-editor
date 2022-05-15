@@ -11,7 +11,8 @@ import { Sidebar } from "./components/Sidebar";
 
 export default function App() {
   const [isWhiteTheme, setIsWhiteTheme] = useState<boolean>(true);
-  const [isOpenedNav, setIsOpenedNav] = useState<boolean>(false);
+  const [isOpenedNav, setIsOpenedNav] = useState<boolean>(true);
+  const [currentDocument, setCurrentDocument] = useState<any>({})
 
   return (
     <Fragment>

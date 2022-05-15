@@ -40,14 +40,12 @@ export function DocumentContainer(props: DocumentContainerProps) {
 
   return (
     <Container>
-      {!props.navOn && (
-        <Fragment>
-          <Title>
-            Markdown
-          </Title>
-          <TitleDivisor />
-        </Fragment>
-      )}
+      <Fragment>
+        <Title>
+          Markdown
+        </Title>
+        <TitleDivisor />
+      </Fragment>
       <DocumentName />
     </Container>
   );
