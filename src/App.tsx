@@ -11,7 +11,7 @@ import { Sidebar } from "./components/Sidebar";
 
 export default function App() {
   const [isWhiteTheme, setIsWhiteTheme] = useState<boolean>(true);
-  const [isOpenedNav, setIsOpenedNav] = useState<boolean>(true);
+  const [isOpenedNav, setIsOpenedNav] = useState<boolean>(false);
   const [currentDocument, setCurrentDocument] = useState<any>({})
 
   return (
@@ -19,7 +19,7 @@ export default function App() {
       <ThemeProvider theme={isWhiteTheme ? lightTheme : darkTheme}>
         <GlobalStyle />
         <WrapperRow>
-          <Sidebar on={isOpenedNav} />
+          <Sidebar onSideBar={isOpenedNav} onWhiteMode={isWhiteTheme} setOnWhiteMode={setIsWhiteTheme} />
           <WrapperColumn>
             <Nav on={isOpenedNav} setOn={setIsOpenedNav} />
             <Content />

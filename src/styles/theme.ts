@@ -10,6 +10,7 @@ export const lightTheme = {
     title: '#35393F',
     text: '#7C8187',
     superText: '#E46643',
+    superTextHover: '#F39765',
     navBtn: '#35393F'
   },
   font: {
@@ -36,6 +37,7 @@ export const darkTheme = {
     title: '#FFFFFF',
     text: '#C1C4CB',
     superText: '#E46643',
+    superTextHover: '#F39765',
     navBtn: '#35393F'
   },
   font: {

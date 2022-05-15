@@ -1,8 +1,8 @@
 import { Header, ButtonNavbar, Container } from "./style";
 import { DocumentContainer } from "./DocumentContainer";
 import { ButtonsContainer } from "./ButtonsContainer";
-import { StyledMenuIcon } from "../Icons/MenuIcon";
-import { StyledCloseIcon } from "../Icons/CloseIcon";
+import { MenuIcon } from "../Icons/MenuIcon";
+import { CloseIcon } from "../Icons/CloseIcon";
 
 interface NavProps {
   on: boolean;
@@ -20,12 +20,12 @@ export function Nav(props: NavProps) {
   return (
     <Header>
       <ButtonNavbar onClick={handleButtonNav}>
-        { !on ? <StyledMenuIcon /> : <StyledCloseIcon />}
+        { !on ? <MenuIcon /> : <CloseIcon />}
       </ButtonNavbar>
 
       <Container>
         <DocumentContainer navOn={on} />
-        <ButtonsContainer />
+        {!on && <ButtonsContainer />}
       </Container>
     </Header>
   );

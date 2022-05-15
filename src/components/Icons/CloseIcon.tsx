@@ -4,7 +4,7 @@ interface CloseIconProps {
   fill?: string;
 }
 
-export function StyledCloseIcon(props: CloseIconProps) {
+export function CloseIcon(props: CloseIconProps) {
   return (
     <SVGWrapper viewBox="0 0 24 24">
       <g fill="#FFF" fill-rule="evenodd">

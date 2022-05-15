@@ -1,5 +1,5 @@
-import { Fragment, useEffect, useState } from "react";
-import { StyledDocumentIcon } from "../../Icons/DocumentIcon";
+import { useEffect, useState } from "react";
+import { DocumentIcon } from "../../Icons/DocumentIcon";
 import { 
   Container, 
   Document,
@@ -12,12 +12,14 @@ import {
 export function DocumentsSidebar() {
   const [documents, setDocuments] = useState<Array<any>>([])
 
-  useEffect(() => {
+  useEffect(() => { 
     const getDocuments = async () => {
       const response = await fetch('data.json');
       const result = await response.json();
       return setDocuments(result)
     }
+
+    getDocuments();
   }, [])
 
   return (
@@ -26,7 +28,7 @@ export function DocumentsSidebar() {
         return (
           <Document key={index}>
             <StyledDocumentIconWrapper>
-              <StyledDocumentIcon />
+              <DocumentIcon />
             </StyledDocumentIconWrapper>
             <DocumentWrapper>
               <CreatedDate>

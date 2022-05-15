@@ -1,5 +1,5 @@
 import { FormEvent, useState } from "react";
-import { StyledDocumentIcon } from "../../Icons/DocumentIcon";
+import { DocumentIcon } from "../../Icons/DocumentIcon";
 import { Container, DocumentIconWrapper, DocumentPlaceholder, DocumentTitle, Wrapper } from "./style";
 
 interface DocumentNameProps {
@@ -16,7 +16,7 @@ export function DocumentName(props: DocumentNameProps) {
   return (
     <Container>
       <DocumentIconWrapper>
-        <StyledDocumentIcon />
+        <DocumentIcon />
       </DocumentIconWrapper>
 
       <Wrapper>

@@ -9,14 +9,18 @@ import {
   SidebarMainWrapper,
   SidebarContentWrapper
 } from "./style";
+import { ThemeChanger } from "./ThemeChanger";
 
 interface SidebarProps {
-  on: boolean;
+  onSideBar: boolean;
+  onWhiteMode: boolean;
+  setOnWhiteMode: React.Dispatch<React.SetStateAction<boolean>>;
 }
+
 export function Sidebar(props: SidebarProps) {
   return(
     <Fragment>
-      {props.on && (
+      {props.onSideBar && (
         <Container>
           <Header>
             <HeaderTitle>My Documents</HeaderTitle>
@@ -32,7 +36,7 @@ export function Sidebar(props: SidebarProps) {
               <DocumentsSidebar />
             </SidebarContentWrapper>
 
-            Hello
+            <ThemeChanger onWhiteMode={props.onWhiteMode} setOnWhiteMode={props.setOnWhiteMode} />
           </SidebarMainWrapper>
         </Container>
       )}

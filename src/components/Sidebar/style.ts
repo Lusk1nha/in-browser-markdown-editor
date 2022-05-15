@@ -76,9 +76,9 @@ export const ButtonCreateDocument = styled.button.attrs(props => ({
   padding: 0.5rem 1rem;
   cursor: pointer;
 
-  transition: filter 100ms ease;
+  transition: background 200ms ease;
 
-  &:hover {
-    filter: brightness(115%);
+  &:hover, &:focus {
+    background: ${props => props.theme.colors.superTextHover};
   }
 `;

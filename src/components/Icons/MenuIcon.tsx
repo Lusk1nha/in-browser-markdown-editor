@@ -4,7 +4,7 @@ interface MenuIconProps {
   fill?: string;
 }
 
-export function StyledMenuIcon(props: MenuIconProps) {
+export function MenuIcon(props: MenuIconProps) {
   return (
     <SVGWrapper viewBox="0 0 25 20">
       <g fill="#FFF" fill-rule="evenodd">
