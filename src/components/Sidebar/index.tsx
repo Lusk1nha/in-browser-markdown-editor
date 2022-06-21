@@ -1,13 +1,14 @@
 import { Fragment } from "react";
 import { DocumentsSidebar } from "./DocumentsSidebar";
-import { 
-  Container, 
+import {
+  Container,
   Header,
   HeaderTitle,
-  ButtonCreateDocumentWrapper, 
+  ButtonCreateDocumentWrapper,
   ButtonCreateDocument,
   SidebarMainWrapper,
-  SidebarContentWrapper
+  SidebarContentWrapper,
+  ContainerPlaceholder
 } from "./style";
 import { ThemeChanger } from "./ThemeChanger";
 
@@ -18,10 +19,10 @@ interface SidebarProps {
 }
 
 export function Sidebar(props: SidebarProps) {
-  return(
+  return (
     <Fragment>
-      {props.onSideBar && (
-        <Container>
+      <Container isDisabled={props.onSideBar}>
+       <ContainerPlaceholder isDisabled={props.onSideBar}>
           <Header>
             <HeaderTitle>My Documents</HeaderTitle>
           </Header>
@@ -32,14 +33,14 @@ export function Sidebar(props: SidebarProps) {
                   + New Document
                 </ButtonCreateDocument>
               </ButtonCreateDocumentWrapper>
-                
+
               <DocumentsSidebar />
             </SidebarContentWrapper>
 
             <ThemeChanger onWhiteMode={props.onWhiteMode} setOnWhiteMode={props.setOnWhiteMode} />
           </SidebarMainWrapper>
-        </Container>
-      )}
+       </ContainerPlaceholder>
+      </Container>
     </Fragment>
   );
 }

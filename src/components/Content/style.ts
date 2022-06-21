@@ -15,7 +15,7 @@ export const Content = styled.section`
 export const Header = styled.div`
   background: ${props => props.theme.colors.markdown};
   width: 100%;
-  height: 42px;
+  min-height: 42px;
 
   display: flex;
   align-items: center;
@@ -36,7 +36,7 @@ interface TextContainerProps {
 
 export const TextContainer = styled.article<TextContainerProps>`
   background: transparent;
-  max-width: ${props => props.onCenter ? '1000px' : 'unset'};
+  max-width: unset;
   width: 100%;
   height: 100%;
 
@@ -46,8 +46,33 @@ export const TextContainer = styled.article<TextContainerProps>`
   font-weight: ${props => props.theme.font.weight.regular};
 
   display: flex;
+  flex-flow: column;
+  flex-grow: 1;
   align-items: flex-start;
-  justify-content: ${props => props.onCenter ? 'center' : 'flex-start'};
+  justify-content: flex-start;
 
-  padding: 1.5rem 2rem;
+  padding: 1.5rem ${props => props.onCenter ? '20%' : '2rem'} 2rem;
+
+  margin-bottom: 4rem;
+
+  overflow: auto;
+
+  transition: 500ms linear;
+
+  &::-webkit-scrollbar {
+    background: transparent;
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: ${props => props.theme.colors.header};
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: ${props => props.theme.colors.markdown}; 
+  }
 `;

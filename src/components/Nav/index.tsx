@@ -20,12 +20,12 @@ export function Nav(props: NavProps) {
   return (
     <Header>
       <ButtonNavbar onClick={handleButtonNav}>
-        { !on ? <MenuIcon /> : <CloseIcon />}
+        {on ? <MenuIcon /> : <CloseIcon />}
       </ButtonNavbar>
 
       <Container>
         <DocumentContainer navOn={on} />
-        {!on && <ButtonsContainer />}
+        {on && <ButtonsContainer />}
       </Container>
     </Header>
   );

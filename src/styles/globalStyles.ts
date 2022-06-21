@@ -8,6 +8,10 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  body {
+    overflow: hidden;
+  }
+
   #root {
     width: 100%;
     min-height: 100vh;

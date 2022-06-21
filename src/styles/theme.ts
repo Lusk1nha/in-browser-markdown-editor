@@ -11,7 +11,8 @@ export const lightTheme = {
     text: '#7C8187',
     superText: '#E46643',
     superTextHover: '#F39765',
-    navBtn: '#35393F'
+    navBtn: '#35393F',
+    blockQuote: '#F5F5F5'
   },
   font: {
     mono: 'Roboto Mono',
@@ -39,7 +40,8 @@ export const darkTheme = {
     text: '#C1C4CB',
     superText: '#E46643',
     superTextHover: '#F39765',
-    navBtn: '#35393F'
+    navBtn: '#35393F',
+    blockQuote: '#2B2D31'
   },
   font: {
     mono: 'Roboto Mono',

@@ -1,14 +1,22 @@
 import styled from "styled-components";
 
-export const Container = styled.aside`
+export const Container = styled.aside<{ isDisabled: boolean }>`
   background: ${props => props.theme.colors.nav};
+
   max-width: 400px;
+  width: ${props => props.isDisabled ? '0px' : '100%'};
+  height: 101%;
+
+  padding: 0 ${props => props.isDisabled ? '0' : '1.5rem'};
+
+  transition: 200ms ease-out;
+`;
+
+export const ContainerPlaceholder = styled.div<{ isDisabled: boolean }>`
   width: 100%;
   height: 100%;
-
-  padding: 0 1.5rem;
-
-  transition: 300ms;
+  opacity: ${props => props.isDisabled ? '0%' : '100%'};
+  display: ${props => props.isDisabled ? 'none' : 'block'};
 `;
 
 export const Header = styled.nav`

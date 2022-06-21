@@ -9,17 +9,17 @@ import { Nav } from "./components/Nav";
 import { Content } from "./components/Content";
 import { Sidebar } from "./components/Sidebar";
 
-interface CachedLocal {
+interface ICachedLocal {
   cacheTheme: string | null;
   cachePreview: string | null;
 }
 
 export default function App() {
   const [isWhiteTheme, setIsWhiteTheme] = useState<boolean>(true);
-  const [isOpenedNav, setIsOpenedNav] = useState<boolean>(false);
+  const [isNavDisabled, setIsNavDisabled] = useState<boolean>(true);
   const [currentDocument, setCurrentDocument] = useState<any>({})
 
-  const getLocalCache = (): CachedLocal => {
+  const getLocalCache = (): ICachedLocal => {
     const cacheTheme = localStorage.getItem('theme');
     const cachePreview = localStorage.getItem('onPreview');
 
@@ -33,10 +33,10 @@ export default function App() {
     const {
       cacheTheme,
       cachePreview
-    }: CachedLocal = getLocalCache();
+    } = getLocalCache();
 
-    if (cacheTheme !== undefined && cacheTheme != "true") {
-      setIsWhiteTheme(cacheTheme == "true");
+    if (cacheTheme !== undefined && cacheTheme !== "true") {
+      setIsWhiteTheme(cacheTheme === "true");
     };
   }, [])
 
@@ -46,9 +46,9 @@ export default function App() {
       <ThemeProvider theme={isWhiteTheme ? lightTheme : darkTheme}>
         <GlobalStyle />
         <WrapperRow>
-          <Sidebar onSideBar={isOpenedNav} onWhiteMode={isWhiteTheme} setOnWhiteMode={setIsWhiteTheme} />
+          <Sidebar onSideBar={isNavDisabled} onWhiteMode={isWhiteTheme} setOnWhiteMode={setIsWhiteTheme} />
           <WrapperColumn>
-            <Nav on={isOpenedNav} setOn={setIsOpenedNav} />
+            <Nav on={isNavDisabled} setOn={setIsNavDisabled} />
             <Content />
           </WrapperColumn>
         </WrapperRow>

@@ -13,18 +13,40 @@ const Text = styled.textarea.attrs(props => ({
   font-family: ${props => props.theme.font.mono};
   font-weight: ${props => props.theme.font.weight.regular};
 
+  padding: 1.5rem 2rem 3rem;
+
   border: 0;
   resize: none;
+
+  overflow: auto;
+
+  transition: 400ms linear;
+
+  &::-webkit-scrollbar {
+    background: transparent;
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: ${props => props.theme.colors.header}; 
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: ${props => props.theme.colors.markdown}; 
+  }
 `;
 
-interface MarkdownTextProps {
+interface IMarkdownTextProps {
   value: string;
   setValue: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export function MarkdownText(props: MarkdownTextProps) {
+export function MarkdownText(props: IMarkdownTextProps) {
   const handleTextChange = (event: FormEvent<HTMLTextAreaElement>) => {
-    console.log(event.currentTarget.value)
     props.setValue(event.currentTarget.value);
   }
 

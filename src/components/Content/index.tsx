@@ -10,7 +10,8 @@ const Container = styled.main`
   height: 100%;
   display: flex;
   justify-content: center;
-  transition: all 100ms ease-out;
+
+  transition: all 300ms ease;
 `;
 
 export function Content() {
@@ -19,12 +20,16 @@ export function Content() {
 
   return (
     <Container>
-      {!onlyPreview && <Markdown value={value} setValue={setValue} />}
-      <Preview 
-        onlyPreview={onlyPreview} 
-        setOnlyPreview={setOnlyPreview}
+      <Markdown
+        value={value} 
+        setValue={setValue} 
+        disabled={onlyPreview} 
+      />
+      <Preview
         value={value}
         setValue={setValue}
+        onlyPreview={onlyPreview}
+        setOnlyPreview={setOnlyPreview}
       />
     </Container>
   )
